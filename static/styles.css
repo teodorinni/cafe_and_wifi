@@ -1,0 +1,74 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0%;
+}
+
+/* Navbar */
+
+.navbar {
+    padding: 0.5% 3%;
+    background-color: #F38181;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-brand:hover {
+    color: whitesmoke;
+}
+
+/* table */
+
+.table-title {
+    padding: 1% 0% 0% 3.8%;
+    width: 100%;
+}
+
+#first-item {
+    width: 30%;
+    float: left;
+}
+
+#second-item {
+    float: right;
+    margin-right: 1.2%;
+}
+
+#second-item:hover {
+    background-color: #F38181;
+}
+
+table {
+    table-layout: fixed;
+    margin: 0% 3.8%;
+    font-weight: 400;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+thead {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* add cafe */
+form {
+    width: 70%;
+    margin: 3% 5%;
+}
+
+.form-floating {
+    margin: 0.5% 0%;
+}
+
+.form-check {
+    margin: 0.5% 0%;
+}
+
+#add-button:hover {
+    background-color: #F38181;
+}

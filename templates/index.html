@@ -1,0 +1,51 @@
+{% include "header.html" %}
+
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand me-auto" href="#">Cafe and Wifi</a>
+  </div>
+</nav>
+
+<div class="container-fluid table-title">
+  <h4 id="first-item">All Cafes</h4><a type="button" class="btn btn-outline-danger" id="second-item" href="{{url_for('add_cafe')}}">Add Cafe</a>
+</div>
+
+<div class="table-fixed">
+  <table class="table table-striped table-hover" style="width: 95%">
+    <thead class="align-middle">
+      <tr>
+        <th style="width: 1.5%">#</th>
+        <th style="width: 18%">Cafe Name</th>
+        <th style="width: 15%">Map URL</th>
+        <th style="width: 12%">Image</th>
+        <th style="width: 8%">Location</th>
+        <th style="width: 5%; text-align: center">Sockets</th>
+        <th style="width: 4%; text-align: center">Toilet</th>
+        <th style="width: 3%; text-align: center">Wifi</th>
+        <th style="width: 8%; text-align: center">Receives Calls</th>
+        <th style="width: 5%">Seats</th>
+        <th style="width: 7%">Coffee Price</th>
+      </tr>
+    </thead>
+    <tbody class="align-middle">
+    {% for cafe in cafes %}
+      <tr>
+        <td>{{cafe.id}}</td>
+        <td>{{cafe.name}}</td>
+        <td class="text-truncate"><a href="{{cafe.map_url}}" style="text-decoration: none; color: black">{{cafe.map_url}}</a></td>
+        <td class="text-truncate"><img src="{{cafe.img_url}}" class="img-fluid"></td>
+        <td>{{cafe.location}}</td>
+        <td style="text-align: center">{% if cafe.has_sockets == 0 %}✘{% else %}✔{% endif %}</td>
+        <td style="text-align: center">{% if cafe.has_toilet == 0 %}✘{% else %}✔{% endif %}</td>
+        <td style="text-align: center">{% if cafe.has_wifi == 0 %}✘{% else %}✔{% endif %}</td>
+        <td style="text-align: center">{% if cafe.can_take_calls == 0 %}✘{% else %}✔{% endif %}</td>
+        <td>{{cafe.seats}}</td>
+        <td style="text-align: center">{{cafe.coffee_price}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% include "footer.html" %}

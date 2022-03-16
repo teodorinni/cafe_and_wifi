@@ -1,0 +1,66 @@
+{% include "header.html" %}
+
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand me-auto" href="{{url_for('index')}}">Cafe and Wifi</a>
+  </div>
+</nav>
+
+<div class="container-fluid table-title">
+  <h4 id="first-item">Add Cafe</h4>
+</div>
+
+<form name="cafeForm" action="{{url_for('add_cafe')}}" method="post" role="form">
+  <div class="form-floating">
+    <input class="form-control" id="floatingName" placeholder="Cafe name" name="name" required>
+    <label for="floatingName">Cafe Name</label>
+  </div>
+  <div class="form-floating">
+    <input class="form-control" id="floatingMapURL" placeholder="Map URL" name="mapURL" required>
+    <label for="floatingMapURL">Map URL</label>
+  </div>
+  <div class="form-floating">
+    <input class="form-control" id="floatingImageURL" placeholder="Image URL" name="imageURL">
+    <label for="floatingImageURL">Image URL</label>
+  </div>
+  <div class="form-floating">
+    <input class="form-control" id="floatingLocation" placeholder="Location" name="location" required>
+    <label for="floatingLocation">Location</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="checkSockets" name="sockets">
+    <label class="form-check-label" for="checkSockets">
+        Has sockets
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="checkWC" name="toilet">
+    <label class="form-check-label" for="checkWC">
+        Has toilet
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="checkWifi" name="wifi">
+    <label class="form-check-label" for="checkWifi">
+        Has wifi
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="checkCalls" name="calls">
+    <label class="form-check-label" for="checkCalls">
+        Can take calls
+    </label>
+  </div>
+  <div class="form-floating">
+    <input class="form-control" id="floatingSeats" placeholder="Seats Amount" name="seats" required>
+    <label for="floatingSeats">Seats Amount</label>
+  </div>
+  <div class="form-floating">
+    <input class="form-control" id="floatingCoffeePrice" placeholder="Coffee Price" name="price" required>
+    <label for="floatingCoffeePrice">Coffee Price</label>
+  </div>
+  <button type="submit" class="btn btn-outline-danger" id="add-button">Add</button>
+</form>
+
+{% include "footer.html" %}
